@@ -1,0 +1,44 @@
+<!-- <ng-content></ng-content> -->
+
+<app-container></app-container>
+
+<div class="container-fluid">
+    <div class="row">
+
+      
+        <div class="col">
+            <div class="container-fluid mt-0">
+                <h3 class="display-3">
+                    user list
+                </h3>
+
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Avatar</th>
+                            <th>Update user</th>
+                            <th>Delete user</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <td>{{user.id}}</td>
+                            <td>{{user.first_name}}</td>
+                            <td>{{user.last_name}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.avatar}}</td>
+                            <!-- <td><span class="btn btn-primary btn-xs" > <a routerLink='edit'>Edit</a>(click)="editUser(user.first_name, user.last_name, user.email, user.avatar, user.id)">Update</span></td> -->
+
+                            <td><span class="btn btn-warning btn-xs" > <a routerLink='/edit'>Update</a></span></td>
+                            <td><span class="btn btn-danger btn-xs" (click)="deleteUser(user.id)">Delete</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

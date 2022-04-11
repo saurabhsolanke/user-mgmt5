@@ -1,0 +1,50 @@
+<div class="container-sm mt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 class="display-2">Welcome to angular </h1>
+            <div class="col-md-8">
+                <h3 class="display-5">{{title}}</h3>
+                <div class="card">
+                    <div class="card-header">Sign In</div>
+                    <div class="card-body">
+                        <form [formGroup]="Form" (ngSubmit) = "login()">
+                            <div class="form-group row">
+                                <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                                <div class="col-md-6">
+                                    <input type="email" id="email" class="form-control" name="email" formControlName="email" required>
+                                    <small *ngIf="Form.controls['email'].invalid && (Form.controls['email'].dirty || Form.controls['email'].touched)"  class="form-text text-danger">Please enter valid email</small>
+                                </div>
+                            </div> <br>
+
+                            <div class="form-group row">
+                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <div class="col-md-6">
+                                    <input type="password" id="password" class="form-control" formControlName="password" name="password" required>
+                                    <small *ngIf="Form.controls['password'].invalid && (Form.controls['password'].dirty || Form.controls['password'].touched)"  class="form-text text-danger">Please enter valid password</small>
+                                </div>
+                            </div> <br>
+
+                            <div class="form-group row">
+                                <div class="col-md-6 offset-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember"> Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div> <br>
+
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit"  [disabled]="Form.pristine || Form.invalid" class="btn btn-primary">
+                                    Sign In
+                                </button>
+                                <a href="#" class="btn btn-link">
+                                    Forgot Your Password?
+                                </a>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

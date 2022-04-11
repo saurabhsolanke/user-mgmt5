@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'user-mgmt5';
+  services: any;
+
+  logout() {
+    this.services.logout();
+  }
 }
