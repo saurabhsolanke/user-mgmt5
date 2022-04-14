@@ -1,0 +1,32 @@
+<app-container></app-container>
+
+
+<div class="container mt-3 border">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th (click)="sort('id')" scope="col">id<i class="fa fa-sort" aria-hidden="true"></i></th>
+                <th scope="col">Name</th>
+                <th scope="col">Year</th>
+                <th scope="col">Color</th>
+                <th scope="col">Pantone_value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+            *ngFor="let user of usersd | orderBy: key: reverse | paginate : {itemsPerPage:5, currentPage:p};">
+                <td>{{usersd.id}}</td>
+                <td>{{usersd.name}}</td>
+                <td>{{usersd.year}}</td>
+                <td>{{usersd.color}}</td>
+                <td>{{usersd.pantone_value}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <!-- Table footer -->
+        </tfoot>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+<app-footer></app-footer>

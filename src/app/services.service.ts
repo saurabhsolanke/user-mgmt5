@@ -23,6 +23,11 @@ export class ServicesService {
     return this.http.get(url);
   }
 
+  tableData(){
+    let url="https://reqres.in/api/unknown";
+    return this.http.get(url);
+  }
+
   IsLoggedIn(){
     return !!localStorage.getItem('token');
   }

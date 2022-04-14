@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/user.model';
-import { ToastrService } from 'ngx-toastr';
-// import { ServicesService } from 'src/app/services.service';
-
+import { AuthService } from 'src/app/auth.service';
+// import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -26,6 +25,11 @@ export class UserComponent implements OnInit {
   private userurl = "https://reqres.in/api/users";
 
   constructor(private http: HttpClient) { }
+
+  
+  // showToasterSuccess(){
+  //   this.toastr.success("Data shown successfully !!", "Data shown successfully !!")
+  // }
 
   ngOnInit() {
     this.getallUsers();

@@ -11,8 +11,7 @@
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                 <div class="col-md-6">
-                                    <input type="email" id="email" class="form-control" name="email"
-                                        formControlName="email" required>
+                                    <input type="email" id="email" class="form-control" name="email" formControlName="email" required ngModel name ="email">
                                     <small
                                         *ngIf="Form.controls['email'].invalid && (Form.controls['email'].dirty || Form.controls['email'].touched)"
                                         class="form-text text-danger">Please enter valid email</small>
@@ -23,7 +22,7 @@
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                 <div class="col-md-6">
                                     <input type="password" id="password" class="form-control" formControlName="password"
-                                        name="password" required>
+                                        name="password" equired ngModel name ="password" >
                                     <small
                                         *ngIf="Form.controls['password'].invalid && (Form.controls['password'].dirty || Form.controls['password'].touched)"
                                         class="form-text text-danger">Please enter valid password</small>

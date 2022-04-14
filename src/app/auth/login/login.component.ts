@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { ServicesService } from '../../services.service';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',

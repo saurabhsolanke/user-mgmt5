@@ -10,6 +10,7 @@ import { ContainerComponent } from './container/container.component';
 import { EditComponent } from './container/user/edit/edit.component';
 import { AuthGuard } from './auth.guard';
 import { FooterComponent } from './container/footer/footer.component';
+import { TableComponent } from './container/table/table.component';
 
 const routes: Routes = [
   {path:'', component: LoginComponent },
@@ -20,6 +21,8 @@ const routes: Routes = [
   {path:'adduser', component: AdduserComponent },
   {path:'edit', component: EditComponent },
   {path:'footer', component: FooterComponent },
+  {path:'table', component: TableComponent },
+
 
 ];
 
