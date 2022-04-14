@@ -7,20 +7,26 @@
                 <div class="card">
                     <div class="card-header">Sign In</div>
                     <div class="card-body">
-                        <form [formGroup]="Form" (ngSubmit) = "login()">
+                        <form [formGroup]="Form" (ngSubmit)="login()">
                             <div class="form-group row">
                                 <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
                                 <div class="col-md-6">
-                                    <input type="email" id="email" class="form-control" name="email" formControlName="email" required>
-                                    <small *ngIf="Form.controls['email'].invalid && (Form.controls['email'].dirty || Form.controls['email'].touched)"  class="form-text text-danger">Please enter valid email</small>
+                                    <input type="email" id="email" class="form-control" name="email"
+                                        formControlName="email" required>
+                                    <small
+                                        *ngIf="Form.controls['email'].invalid && (Form.controls['email'].dirty || Form.controls['email'].touched)"
+                                        class="form-text text-danger">Please enter valid email</small>
                                 </div>
                             </div> <br>
 
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                 <div class="col-md-6">
-                                    <input type="password" id="password" class="form-control" formControlName="password" name="password" required>
-                                    <small *ngIf="Form.controls['password'].invalid && (Form.controls['password'].dirty || Form.controls['password'].touched)"  class="form-text text-danger">Please enter valid password</small>
+                                    <input type="password" id="password" class="form-control" formControlName="password"
+                                        name="password" required>
+                                    <small
+                                        *ngIf="Form.controls['password'].invalid && (Form.controls['password'].dirty || Form.controls['password'].touched)"
+                                        class="form-text text-danger">Please enter valid password</small>
                                 </div>
                             </div> <br>
 
@@ -35,14 +41,15 @@
                             </div> <br>
 
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit"  [disabled]="Form.pristine || Form.invalid" class="btn btn-primary">
+                                <button type="submit" [disabled]="Form.pristine || Form.invalid" class="btn btn-primary">
                                     Sign In
                                 </button>
                                 <a href="#" class="btn btn-link">
                                     Forgot Your Password?
                                 </a>
                             </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

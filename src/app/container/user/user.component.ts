@@ -1,6 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/user.model';
+import { ToastrService } from 'ngx-toastr';
+// import { ServicesService } from 'src/app/services.service';
+
+
 
 @Component({
   selector: 'app-user',
@@ -13,13 +17,35 @@ export class UserComponent implements OnInit {
   user!: User[];
   submitted = false;
   uid = null;
-  private userurl = "https://reqres.in/api/users";
+  first_name: any;
+  p:number =1;
+  toastr: any;
+
+
   // private userurl = "https://jsonplaceholder.typicode.com/users";
+  private userurl = "https://reqres.in/api/users";
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getallUsers();
+  }
+
+  Search(){
+    if(this.first_name == ""){
+      this.ngOnInit();
+    }
+    else{
+      this.users = this.users.filter((res: { first_name: string; }) => {
+        return res.first_name.toLocaleLowerCase().match(this.first_name.toLocaleLowerCase());
+      })
+    }
+  }
+  key:string = 'id';
+  reverse: boolean = false;
+  sort(key: string){
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
   getallUsers() {
@@ -39,30 +65,13 @@ export class UserComponent implements OnInit {
       )
   }
 
-
-  // editUser(fname: any, lname: any, avatar: any, email: any, userID: any) {
-  //   (<HTMLInputElement>document.getElementById("fname")).value = fname;
-  //   (<HTMLInputElement>document.getElementById("lname")).value = lname;
-  //   (<HTMLInputElement>document.getElementById("avatar")).value = avatar;
-  //   (<HTMLInputElement>document.getElementById("email")).value = email;
-  //   (<HTMLInputElement>document.getElementById("userID")).value = userID;
-  // }
-
-  // editUser1(uid: any, userData: User) {
-  //   // this.no = 15;
-  //   console.log(userData);
-  //   return this.http.put(`${this.userurl}/${uid}`, userData)
-  //     .subscribe(
-  //       response => {
-  //         this.submitted = true;
-  //         this.getallUsers();
-  //       },
-  //     )
-  // }
-
+  showToaster(){
+    this.toastr.success("user deleted")
+}
 
   deleteUser(uid: User) {
     console.log(uid);
+    
     return this.http.delete(`${this.userurl}/${uid}`)
       .subscribe(
         response => {

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { ServicesService } from '../../services.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,6 @@ import { ServicesService } from '../../services.service';
 export class LoginComponent implements OnInit {
 
   loginUserData = {}
-
-
   loginMode:boolean = true;
   title = 'user-mgmt5';
   public userDetails: undefined = <any>{
@@ -32,7 +31,10 @@ export class LoginComponent implements OnInit {
    login() {
     if(this.Form.valid){
       console.log(this.Form.value)
+      this.Form.reset();
+      this.router.navigate(['user'])
     }
+
     else{
       console.log("not working");
     }

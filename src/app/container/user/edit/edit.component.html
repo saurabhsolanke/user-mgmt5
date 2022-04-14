@@ -1,14 +1,56 @@
-<!-- <app-container></app-container>
-<div class="container mt-4">
-    <p class="display-2">edit User</p>
-    <form #userForm="ngForm" (ngsubmit)="editUser1(userForm.value)">
-        <input #userID type="text" class="form-control" name="userID" id="userID" placeholder="User ID">
-        <input type="text" class="form-control" name="fname" ngModel id="fname" placeholder="first Name">
-        <input type="text" class="form-control" name="lname" ngModel id="lname" placeholder="Last NAME">
-        <input type="email" class="form-control" name="email" ngModel id="email" placeholder="email" required>
-        <input type="text" class="form-control" name="avatar" ngModel id="avatar" placeholder="avatar">
+<app-container></app-container>
 
-        <button type="button" class="btn btn-primary" id="edits" [disabled]="!userForm.valid"
-            (click)="editUser1(userID.value ,userForm.value)">EDIT User</button>
-    </form>
-</div> -->
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header"> <h2 class="display-5">Edit User</h2></div>
+        <div class="card-body">
+            <form #userForm="ngForm" (ngsubmit)="(userForm.value)">
+                <div class="form-group row">
+                    <label for="email" class="col-md-4 col-form-label text-md-right">User ID</label>
+                    <div class="col-md-6">
+                        <input #userID type="text" class="form-control" name="userID" id="userID" placeholder="User ID">
+                    </div>
+                </div> <br>
+
+                <div class="form-group row">
+                    <label for="password" class="col-md-4 col-form-label text-md-right">First Name</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="fname" ngModel id="fname"
+                            placeholder="first Name">
+                    </div>
+                </div> <br>
+                <div class="form-group row">
+                    <label for="password" class="col-md-4 col-form-label text-md-right">Last Name</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="lname" ngModel id="lname" placeholder="Last NAME">
+                    </div>
+                </div> <br>
+                <div class="form-group row">
+                    <label for="password" class="col-md-4 col-form-label text-md-right">E-mail</label>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" name="email" ngModel id="email" placeholder="email"
+                            required>
+                    </div>
+                </div> <br>
+                <div class="form-group row">
+                    <label for="password" class="col-md-4 col-form-label text-md-right">Avatar</label>
+                    <div class="col-md-6">
+                        <input type="file" placeholder="">
+                    </div>
+                </div> <br>
+
+                <div class="form-group row">
+                    <div class="col-md-6 offset-md-4">
+                        <div class="checkbox">
+                            <label>
+                                <button type="button" class="btn btn-success" id="edits" [disabled]="!userForm.valid"
+                                    (click)="editUser1(userID.value ,userForm.value)">EDIT User</button>
+                            </label>
+                        </div>
+                    </div>
+                </div> <br>
+            </form>
+        </div>
+    </div>
+
+    <app-footer></app-footer>
