@@ -4,27 +4,12 @@ import { Observable } from 'rxjs';
 import { ServicesService } from './services.service';
 
 
-interface Alert {
-  type: string;
-  message: string;
-}
-
-const Alerts: Alert[] = [{
-  type: 'warning',
-  message: 'This is a warning alert',
-},
-  {
-    type: 'primary',
-    message: 'This is a primary alert',
-  },
-];
-
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthGuard implements CanActivate {
+  authService: any;
   constructor(private auth: ServicesService, private router: Router) {
 
   }
@@ -37,4 +22,14 @@ export class AuthGuard implements CanActivate {
     this.router.navigate(['login']);
     return false;
   }
+
+  // canActivate(
+  //   next: ActivatedRouteSnapshot,
+  //   state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  //   if (this.authService.isAuthenticated) {
+  //     return true;
+  //   }
+  //   this.router.navigate(['']);
+  //   return false;
+  // }
 }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdduserComponent } from './container/user/adduser/adduser.component';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 import { LoginComponent } from './auth/login/login.component';
 import { UserComponent } from './container/user/user.component';
@@ -19,7 +20,7 @@ const routes: Routes = [
   {path:'user', component: UserComponent,canActivate:[AuthGuard] },
   // loadChildren:()=>import('./app.module').then(a=>a.AppModule) , canActivate:[AuthGuard]
   {path:'adduser', component: AdduserComponent },
-  {path:'edit', component: EditComponent },
+  {path:'edit/:id', component: EditComponent },
   {path:'footer', component: FooterComponent },
   {path:'table', component: TableComponent },
 

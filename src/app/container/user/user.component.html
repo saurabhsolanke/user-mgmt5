@@ -25,11 +25,11 @@
                             </span>
                         </div>
                     </div>
+                    <br>
 
                     <!-- <button (click)="showToasterSuccess()" class="btn btn-success">
                         Success Toaster
                     </button>&nbsp; -->
-
                 </div>
 
                 <div class="container mt-3 border">
@@ -55,8 +55,9 @@
                                 <td><img [src]="user.avatar" class="img-fluid" style="max-height: 50px;"></td>
                                 <!-- <td><span class="btn btn-primary btn-xs" > <a routerLink='edit'>Edit</a>(click)="editUser(user.first_name, user.last_name, user.email, user.avatar, user.id)">Update</span></td> -->
 
-                                <td><a routerLink='/edit'><span class="btn btn-warning btn-xs"> Update</span></a></td>
-                                <td><span class="btn btn-danger btn-xs"  (click)="showToaster()" (click)="deleteUser(user.id)">Delete</span></td>
+                                <td><a routerLink='/edit/{{user.id}}' ><span class="btn btn-warning btn-xs"
+                                    >Update</span></a></td>
+                                <td><span class="btn btn-danger btn-xs" (click)="deleteUser(user.id,user.first_name,user.last_name)">Delete</span></td>
                             </tr>
                         </tbody>
                         <tfoot>

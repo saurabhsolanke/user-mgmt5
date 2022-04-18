@@ -11,10 +11,12 @@ import { User } from './user.model';
 export class ServicesService {
 
   users: User[] = [];
-  
 
   private loginurl = "https://reqres.in/api/users/2";
+  private userurl1 = "https://reqres.in/api/users";
+
   httpClient: any;
+  get: any;
 
   constructor(private http:HttpClient) { }
   getData(){
@@ -36,13 +38,20 @@ export class ServicesService {
     return this.http.post<any>(this.loginurl, user)
   }
 
-
   delete(uid:any): Observable<any> {
     return this.httpClient.delete(`${this.loginurl}/${uid}`);
   }
-  edituser(uid:any,gameData:any): Observable<any> {
-    return this.httpClient.put(`${this.loginurl}/${uid}`, gameData);
+  edituser(uid:any): Observable<any> {
+    return this.httpClient.put(`${this.loginurl}/${uid}`);
   }
 
+  getCurrentData(uid: any){
+    return this.httpClient.get(`${this.userurl1}/${uid}`);
+  }
+
+  updateuser(uid: any, data: any){
+    return this.httpClient.get(`${this.userurl1}/${uid}`,data);
+
+  }
 
 }

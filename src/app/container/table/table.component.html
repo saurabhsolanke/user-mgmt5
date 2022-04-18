@@ -1,7 +1,24 @@
 <app-container></app-container>
 
+<div class="container mt-3 py-5">
+    <h4 class="display-3">Table List </h4>
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">Search Name</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="Search()" placeholder="Search here">
+        </div>
+        <div class="col-auto">
+            <span id="passwordHelpInline" class="form-text">
+                Must be 8-20
+            </span>
+        </div>
+    </div>
+    
+</div>
 
-<div class="container mt-3 border">
+<div class="container mt-3 border"><br>
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -14,12 +31,12 @@
         </thead>
         <tbody>
             <tr
-            *ngFor="let user of usersd | orderBy: key: reverse | paginate : {itemsPerPage:5, currentPage:p};">
-                <td>{{usersd.id}}</td>
-                <td>{{usersd.name}}</td>
-                <td>{{usersd.year}}</td>
-                <td>{{usersd.color}}</td>
-                <td>{{usersd.pantone_value}}</td>
+            *ngFor="let user of users | orderBy: key: reverse | paginate : {itemsPerPage:5, currentPage:p};">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.year}}</td>
+                <td>{{user.color}}</td>
+                <td>{{user.pantone_value}}</td>
             </tr>
         </tbody>
         <tfoot>

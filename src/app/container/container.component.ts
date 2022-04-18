@@ -14,8 +14,8 @@ export class ContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLogout() {
-    this.router.navigate(['login']);
-    localStorage.clear();
-  }
+  // onLogout() {
+  //   this.router.navigate(['login']);
+  //   // localStorage.clear();
+  // }
 }

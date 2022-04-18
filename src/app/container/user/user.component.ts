@@ -16,9 +16,12 @@ export class UserComponent implements OnInit {
   user!: User[];
   submitted = false;
   uid = null;
+  
   first_name: any;
   p:number =1;
   toastr: any;
+
+  
 
 
   // private userurl = "https://jsonplaceholder.typicode.com/users";
@@ -73,8 +76,10 @@ export class UserComponent implements OnInit {
     this.toastr.success("user deleted")
 }
 
-  deleteUser(uid: User) {
+  deleteUser(uid: User,uemail: User,ufirst_name: User) {
     console.log(uid);
+    console.log(uemail);
+    console.log(ufirst_name)
     
     return this.http.delete(`${this.userurl}/${uid}`)
       .subscribe(
@@ -87,3 +92,4 @@ export class UserComponent implements OnInit {
   }
 
 }
+
