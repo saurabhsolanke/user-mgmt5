@@ -18,6 +18,7 @@ import { FooterComponent } from './container/footer/footer.component';
 import { TableComponent } from './container/table/table.component';
 import { AuthService } from './auth.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ContainerComponent,
     EditComponent,
     FooterComponent,
-    TableComponent,
+    TableComponent
+
   ],
   imports: [
     BrowserModule,

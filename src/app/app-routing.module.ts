@@ -17,14 +17,11 @@ const routes: Routes = [
   {path:'', component: LoginComponent },
   {path:'login', component: LoginComponent },
   {path:'container', component: ContainerComponent },
-  {path:'user', component: UserComponent,canActivate:[AuthGuard] },
-  // loadChildren:()=>import('./app.module').then(a=>a.AppModule) , canActivate:[AuthGuard]
+  {path: 'user', component: UserComponent, canActivate:[AuthGuard] },
   {path:'adduser', component: AdduserComponent },
   {path:'edit/:id', component: EditComponent },
   {path:'footer', component: FooterComponent },
   {path:'table', component: TableComponent },
-
-
 ];
 
 @NgModule({

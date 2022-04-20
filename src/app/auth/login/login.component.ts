@@ -79,8 +79,3 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['login']);
   }
 }
-
-function email(email: any) {
-  throw new Error('Function not implemented.');
-}
-

@@ -12,8 +12,8 @@ export class ServicesService {
 
   users: User[] = [];
 
-  private loginurl = "https://reqres.in/api/users/2";
-  private userurl1 = "https://reqres.in/api/users";
+  private loginurl = "https://reqres.in/api/login";
+  private userurl1 = " https://reqres.in/api/users?page=2";
 
   httpClient: any;
   get: any;
